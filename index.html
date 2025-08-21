@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Sharma - AI | ML Engineer | Data Scientist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      min-height: 100vh;
+      color: #1e293b;
+    }
+
+    body.dark {
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #f1f5f9;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(20px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2), 0 0 30px rgba(100, 116, 139, 0.3);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .dark .glass-card {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .dark .glass-card:hover {
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Project Cards with Gradient Borders - Light Mode */
+    .gradient-border-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .gradient-border-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      border-radius: inherit;
+      background: linear-gradient(45deg, #64748b, #475569, #334155, #1e293b, #0f172a, #64748b);
+      background-size: 300% 300%;
+      animation: gradientRotate 4s ease infinite;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: xor;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+    }
+
+    .dark .gradient-border-card::before {
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #f0932b, #eb4d4b, #6c5ce7);
+    }
+
+    @keyframes gradientRotate {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .gradient-border-card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .dark .gradient-border-card:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Tech Pills - Light Mode */
+    .tech-pill {
+      background: linear-gradient(135deg, #64748b, #475569);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: inline-block;
+      margin: 0.25rem;
+      box-shadow: 0 4px 15px rgba(100, 116, 139, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .dark .tech-pill {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .tech-pill:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(100, 116, 139, 0.5);
+    }
+
+    .dark .tech-pill:hover {
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    /* Certification Cards */
+    .cert-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(100, 116, 139, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .dark .cert-card::before {
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    }
+
+    .cert-card:hover::before {
+      left: 100%;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .dark .cert-card:hover {
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Skill Icons */
+    .skill-icon-container {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .skill-icon-container:hover {
+      transform: scale(1.15) rotate(5deg);
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .dark .skill-icon-container:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Hero Section Enhancements */
+    .hero-text {
+      background: linear-gradient(45deg, #64748b, #475569, #334155, #1e293b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientText 3s ease-in-out infinite;
+    }
+
+    .dark .hero-text {
+      background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @keyframes gradientText {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Navigation Enhancement */
+    .nav-glass {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .dark .nav-glass {
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Button Enhancements */
+    .btn-primary {
+      background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+      box-shadow: 0 10px 20px rgba(100, 116, 139, 0.3);
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    .dark .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(100, 116, 139, 0.5);
+    }
+
+    .dark .btn-primary:hover {
+      box-shadow: 0 15px 30px rgba(102, 126, 234, 0.6);
+    }
+
+    /* Section Transparency */
+    .section-transparent {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .dark .section-transparent {
+      background: rgba(0, 0, 0, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Floating Animation */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Light mode text colors */
+    .light-text {
+      color: #334155;
+    }
+
+    .dark .light-text {
+      color: #e2e8f0;
+    }
+
+    /* Accent colors for light mode */
+    .accent-blue-light {
+      color: #3b82f6;
+    }
+
+    .accent-green-light {
+      color: #10b981;
+    }
+
+    .accent-orange-light {
+      color: #f59e0b;
+    }
+
+    .accent-purple-light {
+      color: #8b5cf6;
+    }
+  </style>
+</head>
+<body class="transition-colors duration-500">
+
+  <!-- Header -->
+  <header class="nav-glass sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-2xl md:text-3xl font-bold hero-text">Aditya</h1>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="#about" class="hover:text-blue-600 dark:hover:text-yellow-300 transition-colors">About</a>
+        <a href="#experience" class="hover:text-blue-600 dark:hover:text-yellow-300 transition-colors">Experience</a>
+        <a href="#skills" class="hover:text-blue-600 dark:hover:text-yellow-300 transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-blue-600 dark:hover:text-yellow-300 transition-colors">Projects</a>
+        <a href="#certifications" class="hover:text-blue-600 dark:hover:text-yellow-300 transition-colors">Certifications</a>
+        <a href="#contact" class="hover:text-blue-600 dark:hover:text-yellow-300 transition-colors">Contact</a>
+        <button id="theme-toggle" class="p-2 rounded-full glass-card">
+          <i class="fas fa-moon dark:hidden text-slate-600"></i>
+          <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-32 text-center">
+    <div class="container mx-auto px-4">
+      <h1 class="text-5xl md:text-7xl font-extrabold hero-text mb-6 floating">Aditya Sharma</h1>
+      <p class="text-xl md:text-2xl mb-4 opacity-90 light-text">AI | ML Engineer | Data Scientist | Full-Stack AI Developer</p>
+      <p class="mt-6 max-w-2xl mx-auto opacity-80 text-lg light-text">Designing intelligent, scalable AI solutions that deliver real-world impact.</p>
+      <a href="#projects" class="mt-8 inline-block px-8 py-4 btn-primary font-semibold rounded-xl">
+        <i class="fas fa-rocket mr-2"></i>Explore My Work
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 section-transparent">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 hero-text">About Me</h2>
+      <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+        <div class="glass-card p-2 floating">
+          <img src="https://analyticsindiamag.com/wp-content/uploads/2019/02/Digital-Marketing-Write-For-Us.gif" alt="Coding" class="w-full md:w-96 rounded-xl">
+        </div>
+        <div class="glass-card p-8 flex-1">
+          <p class="text-lg mb-6 light-text">I'm Aditya Sharma, an <strong class="hero-text">AI Full-Stack Developer</strong> passionate about building intelligent, scalable applications.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle accent-green-light mr-3 mt-1"></i>
+              <span class="light-text">Proficient in <strong>AI/ML frameworks</strong> (TensorFlow, PyTorch), <strong>Full-Stack Development</strong> (Node.js, React, Django), and cloud platforms.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle accent-green-light mr-3 mt-1"></i>
+              <span class="light-text"><strong>AI Solutions Architect</strong>: experienced in end-to-end AI systems — from data pipelines to deployment.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle accent-green-light mr-3 mt-1"></i>
+              <span class="light-text">Skilled in <strong>MLOps and DevOps</strong>, ensuring scalable and automated AI workflows.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 hero-text">Experience</h2>
+      <div class="max-w-4xl mx-auto">
+        <div class="glass-card p-8">
+          <div class="flex items-start justify-between flex-wrap gap-4">
+            <div>
+              <h3 class="text-2xl font-semibold mb-2 light-text">Project Engineer</h3>
+              <p class="text-xl accent-blue-light">CDAC Patna · Full-time</p>
+              <p class="text-slate-500 dark:text-gray-400">Oct 2022 - Present · 3+ Years</p>
+            </div>
+            <div class="glass-card p-4">
+              <i class="fas fa-building text-3xl accent-blue-light"></i>
+            </div>
+          </div>
+          <p class="mt-6 text-lg light-text">Contributed to AI-driven projects, developing scalable ML models and deploying them into production environments. Led initiatives in computer vision, NLP, and predictive analytics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 section-transparent">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 hero-text">⚡ Skills</h2>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+        <!-- Python -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" class="w-12 h-12"/>
+        </div>
+        <!-- PyTorch -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="PyTorch" class="w-12 h-12"/>
+        </div>
+        <!-- TensorFlow -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow" class="w-12 h-12"/>
+        </div>
+        <!-- Scikit-learn -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit-learn" class="w-12 h-12"/>
+        </div>
+        <!-- Pandas -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" alt="Pandas" class="w-12 h-12"/>
+        </div>
+        <!-- Seaborn -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn" class="w-12 h-12"/>
+        </div>
+        <!-- OpenCV -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" class="w-12 h-12"/>
+        </div>
+        <!-- MySQL -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" class="w-12 h-12"/>
+        </div>
+        <!-- Hadoop -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://www.vectorlogo.zone/logos/apache_hadoop/apache_hadoop-icon.svg" alt="Hadoop" class="w-12 h-12"/>
+        </div>
+        <!-- AWS -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="w-12 h-12"/>
+        </div>
+        <!-- Azure -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="Azure" class="w-12 h-12"/>
+        </div>
+        <!-- GCP -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="GCP" class="w-12 h-12"/>
+        </div>
+        <!-- Docker -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker" class="w-12 h-12"/>
+        </div>
+        <!-- Kubernetes -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Kubernetes" class="w-12 h-12"/>
+        </div>
+        <!-- Jenkins -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins" class="w-12 h-12"/>
+        </div>
+        <!-- Git -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" class="w-12 h-12"/>
+        </div>
+        <!-- Django -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="Django" class="w-12 h-12"/>
+        </div>
+        <!-- Flask -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="Flask" class="w-12 h-12"/>
+        </div>
+        <!-- HTML5 -->
+        <div class="skill-icon-container p-6 flex items-center justify-center">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" class="w-12 h-12"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12 hero-text">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      
+      <!-- Project 1: AI-Powered Chatbot -->
+      <div class="gradient-border-card">
+        <div class="flex justify-between items-center mb-6">
+          <i class="fas fa-robot text-4xl accent-purple-light dark:text-pink-400"></i>
+          <a href="https://github.com/aditya" target="_blank" class="glass-card p-3 hover:scale-110 transition-all">
+            <i class="fab fa-github text-2xl light-text"></i>
+          </a>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 light-text">AI-Powered Chatbot</h3>
+        <p class="text-slate-700 dark:text-gray-300 mb-6 leading-relaxed">Developed a conversational AI model using NLP and PyTorch for real-time customer support, improving response efficiency by 40%.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-pill">NLP</span>
+          <span class="tech-pill">PyTorch</span>
+          <span class="tech-pill">Python</span>
+        </div>
+      </div>
+
+      <!-- Project 2: Image Recognition System -->
+      <div class="gradient-border-card">
+        <div class="flex justify-between items-center mb-6">
+          <i class="fas fa-eye text-4xl accent-green-light dark:text-emerald-400"></i>
+          <a href="https://github.com/aditya" target="_blank" class="glass-card p-3 hover:scale-110 transition-all">
+            <i class="fab fa-github text-2xl light-text"></i>
+          </a>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 light-text">Image Recognition System</h3>
+        <p class="text-slate-700 dark:text-gray-300 mb-6 leading-relaxed">Built a computer vision model with TensorFlow and OpenCV for object detection in real-world scenarios, achieving 95% accuracy.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-pill">TensorFlow</span>
+          <span class="tech-pill">OpenCV</span>
+          <span class="tech-pill">Python</span>
+        </div>
+      </div>
+
+      <!-- Project 3: Predictive Analytics Dashboard -->
+      <div class="gradient-border-card">
+        <div class="flex justify-between items-center mb-6">
+          <i class="fas fa-chart-bar text-4xl accent-orange-light dark:text-orange-400"></i>
+          <a href="https://github.com/aditya" target="_blank" class="glass-card p-3 hover:scale-110 transition-all">
+            <i class="fab fa-github text-2xl light-text"></i>
+          </a>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 light-text">Predictive Analytics Dashboard</h3>
+        <p class="text-slate-700 dark:text-gray-300 mb-6 leading-relaxed">Created a scalable data pipeline using AWS, Hadoop, and Flask to visualize business insights, enabling data-driven decisions.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-pill">AWS</span>
+          <span class="tech-pill">Hadoop</span>
+          <span class="tech-pill">Flask</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="py-20 section-transparent">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 hero-text">🎓 Certifications</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        
+        <!-- Certificate 1 -->
+        <div class="cert-card p-8">
+          <div class="flex items-center mb-6">
+            <img src="https://img.icons8.com/color/48/amazon-web-services.png" alt="AWS" class="w-12 h-12 mr-4">
+            <h3 class="text-xl font-semibold light-text">Introduction to Machine Learning in AWS</h3>
+          </div>
+          <p class="accent-blue-light mb-2">Great Learning</p>
+          <a href="#" class="inline-block mt-4 px-6 py-2 btn-primary rounded-lg text-sm font-medium">View Credential</a>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="cert-card p-8">
+          <div class="flex items-center mb-6">
+            <img src="https://static.wikia.nocookie.net/logopedia/images/d/d2/TCS_wordmark_2020.svg/revision/latest/scale-to-width-down/250?cb=20210607075548" alt="TCS" class="w-12 h-12 mr-4">
+            <h3 class="text-xl font-semibold light-text">Communication Skills</h3>
+          </div>
+          <p class="accent-blue-light mb-2">TCS ION</p>
+          <p class="text-sm text-slate-500 dark:text-gray-400 mb-2">ID: 91306-22361965-1016</p>
+          <a href="#" class="inline-block mt-4 px-6 py-2 btn-primary rounded-lg text-sm font-medium">View Credential</a>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="cert-card p-8">
+          <div class="flex items-center mb-6">
+            <img src="https://static.vecteezy.com/system/resources/previews/067/941/713/non_2x/udemy-logo-rounded-without-background-for-online-course-platform-free-png.png" alt="Udemy" class="w-12 h-12 mr-4">
+            <h3 class="text-xl font-semibold light-text">Data Manipulation in Python</h3>
+          </div>
+          <p class="accent-blue-light mb-2">Udemy</p>
+          <p class="text-sm text-slate-500 dark:text-gray-400 mb-2">ID: UC-c9e009F2-5545-4565-833f-9caa50e05aBe</p>
+          <a href="#" class="inline-block mt-4 px-6 py-2 btn-primary rounded-lg text-sm font-medium">View Credential</a>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div class="cert-card p-8">
+          <div class="flex items-center mb-6">
+            <img src="https://img.icons8.com/color/48/ibm.png" alt="IBM" class="w-12 h-12 mr-4">
+            <h3 class="text-xl font-semibold light-text">Deep Learning Fundamentals</h3>
+          </div>
+          <p class="accent-blue-light mb-2">Cognitive Class</p>
+          <p class="text-sm text-slate-500 dark:text-gray-400 mb-2">ID: 6023756349844bb4b0fab4d3f385f341</p>
+          <a href="#" class="inline-block mt-4 px-6 py-2 btn-primary rounded-lg text-sm font-medium">View Credential</a>
+        </div>
+
+        <!-- Certificate 5 -->
+        <div class="cert-card p-8">
+          <div class="flex items-center mb-6">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png" alt="HackerRank" class="w-12 h-12 mr-4">
+            <h3 class="text-xl font-semibold light-text">Python Programming</h3>
+          </div>
+          <p class="accent-blue-light mb-2">HackerRank</p>
+          <p class="text-sm text-slate-500 dark:text-gray-400 mb-2">ID: AS3EC1F57FF8</p>
+          <a href="#" class="inline-block mt-4 px-6 py-2 btn-primary rounded-lg text-sm font-medium">View Credential</a>
+        </div>
+
+        <!-- Certificate 6 -->
+        <div class="cert-card p-8">
+          <div class="flex items-center mb-6">
+            <img src="https://static.vecteezy.com/system/resources/previews/067/941/713/non_2x/udemy-logo-rounded-without-background-for-online-course-platform-free-png.png" alt="Udemy" class="w-12 h-12 mr-4">
+            <h3 class="text-xl font-semibold light-text">Linear Regression Analysis</h3>
+          </div>
+          <p class="accent-blue-light mb-2">Udemy</p>
+          <p class="text-sm text-slate-500 dark:text-gray-400 mb-2">ID: UC-65e4c349-b9f2-48c0-8db0-cd63ac6c6315</p>
+          <a href="#" class="inline-block mt-4 px-6 py-2 btn-primary rounded-lg text-sm font-medium">View Credential</a>
+        </div>
+
+        <!-- Certificate 7 -->
+        <div class="cert-card p-8">
+          <div class="flex items-center mb-6">
+            <img src="https://img.icons8.com/color/48/ibm.png" alt="IBM" class="w-12 h-12 mr-4">
+            <h3 class="text-xl font-semibold light-text">Machine Learning with Python</h3>
+          </div>
+          <p class="accent-blue-light mb-2">Cognitive Class</p>
+          <p class="text-sm text-slate-500 dark:text-gray-400 mb-2">ID: c4fab026482247db950801c2baaceab3</p>
+          <a href="#" class="inline-block mt-4 px-6 py-2 btn-primary rounded-lg text-sm font-medium">View Credential</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-8 hero-text">Get in Touch</h2>
+      <div class="glass-card p-12 max-w-4xl mx-auto">
+        <p class="text-xl mb-8 opacity-90 light-text">I'm excited to collaborate on innovative AI and ML projects. Let's create something amazing together!</p>
+        <div class="flex justify-center gap-8 mb-8">
+          <a href="https://linkedin.com/in/adityasharma" target="_blank" class="glass-card p-4 hover:scale-110 transition-all">
+            <i class="fab fa-linkedin fa-3x accent-blue-light"></i>
+          </a>
+          <a href="https://kaggle.com/adityasharma15feb" target="_blank" class="glass-card p-4 hover:scale-110 transition-all">
+            <i class="fab fa-kaggle fa-3x text-cyan-500"></i>
+          </a>
+          <a href="https://www.hackerrank.com/adityasharma" target="_blank" class="glass-card p-4 hover:scale-110 transition-all">
+            <i class="fab fa-hackerrank fa-3x accent-green-light"></i>
+          </a>
+        </div>
+        <a href="mailto:aditya@example.com" class="btn-primary px-8 py-4 rounded-xl text-lg font-semibold">
+          <i class="fas fa-envelope mr-2"></i>Let's Connect
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 section-transparent text-center">
+    <div class="container mx-auto px-4">
+      <p class="text-lg opacity-80 light-text">&copy; 2025 Aditya Sharma. All rights reserved.</p>
+      <p class="mt-4 text-xl hero-text font-semibold">"The best way to predict the future is to create it."</p>
+    </div>
+  </footer>
+
+  <!-- Dark Mode Script -->
+  <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Initialize theme
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      body.classList.add('dark');
+    }
+
+    // Toggle theme
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add intersection observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all cards for animation
+    document.querySelectorAll('.glass-card, .gradient-border-card, .cert-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
